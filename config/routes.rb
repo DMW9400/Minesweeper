@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get '/spaces', to: 'spaces/'
   post '/spaces', to: 'spaces#create'
   get '/spaces/loser', to: 'spaces#loser'
+  get '/spaces/winner', to: 'spaces#winner'
   # resources :spaces
 
   resources :top_players

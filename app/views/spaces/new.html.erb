@@ -1,4 +1,8 @@
-
+<% if @guessed %>
+<h1>If Statement - True!</h1>
+<% else %>
+<h1>If Statement - False!</h1>
+<% end %>
 
 <%=  button_to "a1", spaces_path, method: :post, params: { location: "a1" } %>
 <%=  button_to "a2", spaces_path, method: :post, params: { location: "a2" } %>

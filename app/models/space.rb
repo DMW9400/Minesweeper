@@ -3,31 +3,28 @@ class Space < ApplicationRecord
 
 
   def self.bomb_checker(location)
-    puts "Bomb Checker! #{location} checked"
     @user_guess = Space.find_by(location: location)
     if @user_guess.bomb == true
       true
     else
-      make_guess
+      false
     end
-
   end
 
-  def make_guess(user_guess)
-    @user_space = Space.find_by(id: user_guess)
-    @user_space.update(guessed: true)
+  def self.make_guess(location)
+    @user_guess = Space.find_by(location: location)
+    @user_guess.update(guessed: true)
   end
 
-  def guess_count_checker
+  def self.win
     @guess_count = Space.where(:guessed => true).count
-      if @guess_count == 2
-        # show_winner_page
+    #change this to 2 afterwards
+      if @guess_count >= 2
+        true
       else
-        # show_guess_page
-        bomb_checker
+        false
       end
   end
-
 
 
 
