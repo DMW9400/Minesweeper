@@ -1,10 +1,12 @@
 class Space < ApplicationRecord
   belongs_to :grid
 
-  def bomb_checker(user_guess)
-    @user_guess = Space.find_by(id: user_guess)
+
+  def self.bomb_checker(location)
+    puts "Bomb Checker! #{location} checked"
+    @user_guess = Space.find_by(location: location)
     if @user_guess.bomb == true
-      #show loser page
+      true
     else
       make_guess
     end

@@ -728,3 +728,2187 @@ Migrating to CreateSpaces (20180122143631)
   [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."guessed" = ? LIMIT ?[0m  [["guessed", "t"], ["LIMIT", 11]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "spaces" WHERE "spaces"."guessed" = ?[0m  [["guessed", "t"]]
   [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" ORDER BY "spaces"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:34:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#index as HTML
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `spaces' for #<Class:0x007f7fa4571c20>):
+  
+app/controllers/spaces_controller.rb:5:in `index'
+  [1m[36mGrid Load (0.9ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mGrid Load (0.3ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:37:09 -0500
+Processing by SpacesController#index as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/index.html.erb within layouts/application
+  Rendered spaces/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 0..2)):
+    1: <%= form_for @grid do |f| %>
+    2: 
+    3:   <%= f.button :space_ids, @spaces, :id, :location  %>
+    4: <% end %>
+  
+app/views/spaces/index.html.erb:3:in `block in _app_views_spaces_index_html_erb__2612284589269977962_70093097683340'
+app/views/spaces/index.html.erb:1:in `_app_views_spaces_index_html_erb__2612284589269977962_70093097683340'
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:49:09 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:49:19 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:49:26 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/spaces_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:49:39 -0500
+Processing by SpacesController#index as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/index.html.erb within layouts/application
+  Rendered spaces/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 0..2)):
+    1: <!-- <%= form_for @grid do |f| %>
+    2: 
+    3:   <%= f.button :space_ids, @spaces, :id, :location  %>
+    4: <% end %> -->
+    5: 
+    6: <form action = "/spaces/index" method "Post">
+  
+app/views/spaces/index.html.erb:3:in `block in _app_views_spaces_index_html_erb__2612284589269977962_70093097994780'
+app/views/spaces/index.html.erb:1:in `_app_views_spaces_index_html_erb__2612284589269977962_70093097994780'
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:49:52 -0500
+Processing by SpacesController#index as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/index.html.erb within layouts/application
+  Rendered spaces/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 855ms (Views: 851.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/index?A1=A1" for 127.0.0.1 at 2018-01-22 13:49:56 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces" for 127.0.0.1 at 2018-01-22 13:50:58 -0500
+Processing by SpacesController#index as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/index.html.erb within layouts/application
+  Rendered spaces/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:00 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:15 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:20 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:35 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:48 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:51:56 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:52:03 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?A1=location" for 127.0.0.1 at 2018-01-22 13:52:08 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/" for 127.0.0.1 at 2018-01-22 13:52:56 -0500
+Processing by SpacesController#index as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/index.html.erb within layouts/application
+  Rendered spaces/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/index?location=a2" for 127.0.0.1 at 2018-01-22 13:53:00 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?location=b2" for 127.0.0.1 at 2018-01-22 13:53:05 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?location=a1" for 127.0.0.1 at 2018-01-22 13:53:08 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?location=b1" for 127.0.0.1 at 2018-01-22 13:53:12 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/index?location=a2" for 127.0.0.1 at 2018-01-22 13:53:55 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for SpacesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 13:55:03 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 13:55:06 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 13:55:09 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 13:55:10 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 13:55:11 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 13:55:15 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 13:55:19 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 13:55:21 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 13:56:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 345ms (Views: 278.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 13:56:35 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 13:56:37 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 13:56:57 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 13:59:03 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 13:59:13 -0500
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 24.3ms | ActiveRecord: 0.9ms)
+
+
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 14:00:37 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template spaces/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/davidwelch/Development/Minesweeper/app/views"
+):
+  
+app/controllers/spaces_controller.rb:6:in `new'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 14:01:09 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25233ms (Views: 36.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 15:58:28 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 143ms (Views: 113.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 15:58:33 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 15:58:35 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 15:58:37 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 15:58:37 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 15:58:38 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 15:58:39 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 15:58:52 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 15:58:54 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:00:44 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:00:46 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 16:00:46 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 16:00:47 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:00:48 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:00:48 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.3ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:00:50 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.3ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 16:00:51 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:00:53 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:01:06 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:01:13 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:01:16 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:02:38 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 327ms (Views: 271.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:02:40 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:03:16 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/index" for 127.0.0.1 at 2018-01-22 16:03:19 -0500
+Processing by SpacesController#show as HTML
+  Parameters: {"id"=>"index"}
+Completed 406 Not Acceptable in 58ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SpacesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:04:33 -0500
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:04:43 -0500
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:04:43 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.9ms)
+
+
+  
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c1520068>):
+  
+app/controllers/spaces_controller.rb:6:in `new'
+Processing by SpacesController#new as HTML
+Processing by SpacesController#new as HTML
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:04:44 -0500
+  Parameters: {"location"=>"b2"}
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:04:44 -0500
+  Parameters: {"location"=>"a2"}
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:04:44 -0500
+Processing by SpacesController#new as HTML
+Processing by SpacesController#new as HTML
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  Parameters: {"location"=>"a2"}
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mSpace Load (0.3ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 631ms (ActiveRecord: 0.3ms)
+
+
+Completed 500 Internal Server Error in 641ms (ActiveRecord: 0.9ms)
+
+
+Completed 500 Internal Server Error in 758ms (ActiveRecord: 0.2ms)
+
+
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 782ms (ActiveRecord: 0.3ms)
+
+
+  
+  
+  
+Completed 500 Internal Server Error in 797ms (ActiveRecord: 0.4ms)
+
+
+  
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c6f3ed10>):
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95ca206a68>):
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c6f1e4c0>):
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c400c588>):
+  
+  
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c6f2ff68>):
+app/controllers/spaces_controller.rb:6:in `new'
+  
+app/controllers/spaces_controller.rb:6:in `new'
+app/controllers/spaces_controller.rb:6:in `new'
+  
+app/controllers/spaces_controller.rb:6:in `new'
+app/controllers/spaces_controller.rb:6:in `new'
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:04:47 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.2ms)
+
+
+  
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95ca36ed10>):
+  
+app/controllers/spaces_controller.rb:6:in `new'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:05:36 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.2ms)
+
+
+  
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."grid_id" = ? LIMIT ?[0m  [["grid_id", 1], ["LIMIT", 11]]
+NameError (undefined local variable or method `create_space_path' for #<SpacesController:0x007f95c1b64028>):
+  
+app/controllers/spaces_controller.rb:6:in `new'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:05:45 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 73ms (Views: 59.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:06:51 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  post 'spaces/new' to: 'spaces#create'
+                      ^):
+  
+config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:07:24 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 336ms (Views: 280.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:07:29 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:07:33 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:08:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 215ms (Views: 171.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:08:17 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:08:19 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:08:20 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:09:44 -0500
+Processing by SpacesController#new as HTML
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:09:54 -0500
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 62ms (Views: 25.3ms | ActiveRecord: 1.0ms)
+
+
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 23.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/spaces/new?location=a1" for 127.0.0.1 at 2018-01-22 16:15:19 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:15:21 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=a2" for 127.0.0.1 at 2018-01-22 16:15:25 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"a2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b2" for 127.0.0.1 at 2018-01-22 16:15:28 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b2"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new?location=b1" for 127.0.0.1 at 2018-01-22 16:15:29 -0500
+Processing by SpacesController#new as HTML
+  Parameters: {"location"=>"b1"}
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:17:16 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 20.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:17:39 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 360ms (Views: 288.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spaces?location=a2" for 127.0.0.1 at 2018-01-22 16:17:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/spaces"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:20:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 218ms (Views: 174.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:20:06 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"location"=>"a2"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:22:21 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:22:24 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"location"=>"b1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:23:22 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:23:24 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"location"=>"a1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:24:43 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:24:46 -0500
+Processing by SpacesController#create as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:25:26 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 154ms (Views: 151.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:25:29 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"Bw5Y7OSbz36LZ3WtLooxQzJfQEjO7L60eAFHZ+3COIBXSMAUCvGEZkIZlbq2go4yfOBK8E/3lSPvdxsSBx2VEw=="}
+Completed 500 Internal Server Error in 71188ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `bomb_checker' for #<SpacesController:0x007f94e1cf2010>):
+  
+app/controllers/spaces_controller.rb:13:in `create'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:26:55 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:26:59 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"location"=>"a2", "authenticity_token"=>"ggDbTK17f1YBC5AXg3Xq93IqVEd8OMXENc2NQWm7WjzSRkO0QxE0Tsh1cAAbfVWGPJVe//0j7lOiu9E0g2T3rw=="}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spaces_controller.rb:11:in `create'
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:30:46 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"location"=>"a2", "authenticity_token"=>"ggDbTK17f1YBC5AXg3Xq93IqVEd8OMXENc2NQWm7WjzSRkO0QxE0Tsh1cAAbfVWGPJVe//0j7lOiu9E0g2T3rw=="}
+Completed 500 Internal Server Error in 8614ms (ActiveRecord: 0.0ms)
+
+
+  
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:30:54 -0500
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:30:54 -0500
+SystemExit (exit):
+Processing by SpacesController#new as HTML
+Processing by SpacesController#new as HTML
+  
+  [1m[36mGrid Load (1.7ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGrid Load (1.8ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spaces_controller.rb:11:in `create'
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (15.2ms)
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 1463ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___3792438664804399747_70138710623820'
+Completed 200 OK in 2598ms (Views: 2385.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:31:04 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"yfcG8QlY9IAVIb4AYqqrqgtujzDUacndC3UDwZ5hsNeZsZ4J5zK/mNxfXhf6ohTbRdGFiFVy4kqcA1+0dL4dRA==", "location"=>"a1"}
+Completed 500 Internal Server Error in 30559ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spaces_controller.rb:11:in `create'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:32:03 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (1.4ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 800ms (Views: 537.3ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:32:37 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"TREayYDpu29TYu9KzNGXA5v4EpV9hy3bzjTpvwU3HAQdV4IxboPwd5ocD11U2Shy1UcYLfycBkxZQrXK7+ixlw==", "location"=>"a1"}
+Completed 500 Internal Server Error in 1691ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `bomb_checker' for #<SpacesController:0x007f94e1a63100>):
+  
+app/controllers/spaces_controller.rb:13:in `create'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:37:04 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/app/controllers/application_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/spaces_controller.rb:1:in `<top (required)>'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:37:15 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (1.4ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 760ms (Views: 553.3ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:37:20 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"tj/R/a3mVJnIE4a/cY3T+nBDcB/Wg/SZ9o83IwDFH5rmeUkFQ4wfgQFtZqjphWyLPvx6p1eY3w5h+WtW6hqyCQ==", "location"=>"a1"}
+  [1m[36mSpace Load (1.7ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+No template found for SpacesController#create, rendering head :no_content
+Completed 204 No Content in 149574ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:39:50 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:39:55 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 21.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:39:57 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"LI8H1sGoEZwFXqkxhRkydh9/x/AqXK9lE3RC6BQskjl8yZ8uL8JahMwgSSYdEY0HUcDNSKtHhPKEAh6d/vM/qg==", "location"=>"a1"}
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+No template found for SpacesController#create, rendering head :no_content
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:44:51 -0500
+Completed 204 No Content in 293905ms (ActiveRecord: 0.9ms)
+
+
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:44:54 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 20.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:44:55 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"UMdpoKw+6URORTAgLN1jqaaI0TrOLlySRe0iI9TyFO8AgfFYQlSiXIc70De01dzY6Dfbgk81dwXSm35WPi25fA==", "location"=>"a1"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10048ms (ActiveRecord: 0.8ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spaces_controller.rb:20:in `create'
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:45:40 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (1.9ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 740ms (Views: 530.4ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:45:44 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"GCQA/v29hwHbJvAJoKjqq/L60esHm0HVRADbeWEMdUBIYpgGE9fMGRJYEB44oFXavEXbU4aAakLTdocMi9PY0w==", "location"=>"a1"}
+  [1m[36mSpace Load (1.5ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+No template found for SpacesController#create, rendering head :no_content
+Completed 204 No Content in 18350ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:49:58 -0500
+  
+SyntaxError (/Users/davidwelch/Development/Minesweeper/app/controllers/spaces_controller.rb:25: syntax error, unexpected ':', expecting keyword_end
+    erb: '/loser'
+        ^):
+  
+app/controllers/spaces_controller.rb:25: syntax error, unexpected ':', expecting keyword_end
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:50:21 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 89ms (Views: 69.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:50:25 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"EtrQqlxeP2TzK7S7q76jWeRao8pyfAlJqkOv+dfb4ZNCnEhSsjR0fDpVVKwzthwoquWpcvNnIt49NfOMPQRMAA==", "location"=>"a1"}
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/loser
+Completed 302 Found in 13ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/loser" for 127.0.0.1 at 2018-01-22 16:50:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/loser"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/spaces/loser" for 127.0.0.1 at 2018-01-22 16:50:47 -0500
+Processing by SpacesController#loser as HTML
+  Rendering spaces/loser.html.erb within layouts/application
+  Rendered spaces/loser.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/spaces/loser" for 127.0.0.1 at 2018-01-22 16:51:33 -0500
+Processing by SpacesController#loser as HTML
+  Rendering spaces/loser.html.erb within layouts/application
+  Rendered spaces/loser.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.8ms)
+
+
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-22 16:51:38 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.1ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 19.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-22 16:51:40 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"N2GfmdckTct4So8lCHT4OBV7TK1iRtDjxqEapkkJQRpnJwdhOU4G07E0bzKQfEdJW8RGFeNd+3RR10bTo9bsiQ==", "location"=>"a1"}
+  [1m[36mSpace Load (0.2ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "a1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/spaces/loser
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/spaces/loser" for 127.0.0.1 at 2018-01-22 16:51:40 -0500
+Processing by SpacesController#loser as HTML
+  Rendering spaces/loser.html.erb within layouts/application
+  Rendered spaces/loser.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
