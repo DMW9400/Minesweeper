@@ -1,0 +1,2 @@
+class TopPlayer < ApplicationRecord
+end

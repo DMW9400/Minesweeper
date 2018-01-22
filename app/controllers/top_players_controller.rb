@@ -1,0 +1,2 @@
+class TopPlayersController < ApplicationController
+end

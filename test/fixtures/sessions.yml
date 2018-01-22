@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rounds: 1
+  wins: 1
+  losses: 1
+  user_id: 1
+
+two:
+  rounds: 1
+  wins: 1
+  losses: 1
+  user_id: 1
