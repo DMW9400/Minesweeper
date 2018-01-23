@@ -14,7 +14,7 @@ class Space < ApplicationRecord
   def self.make_guess(location)
     @user_guess = Space.find_by(location: location)
     @user_guess.update(guessed: true)
-    @add_guess_to_session = Session.create(guess: @user_guess)
+    @add_guess_to_session = Session.create(guesses: @user_guess.location)
   end
 
   def self.win

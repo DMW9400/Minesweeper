@@ -10,7 +10,7 @@ class SpacesController < ApplicationController
     @location = params[:location]
     @space = Space.find_by(location: @location)
     @guessed = @space.guessed
-    # byebug
+
     bomb_present = Space.bomb_checker(@location)
     if bomb_present
       redirect_to "/spaces/location=#{@location}"
@@ -21,7 +21,7 @@ class SpacesController < ApplicationController
 
       else
         # redirect to page with guess
-        redirect_to "/spaces/location=#{@location}"
+        # redirect_to "/spaces/location=#{@location}"
       end
     end
   end
@@ -48,7 +48,7 @@ class SpacesController < ApplicationController
 
       else
         # redirect to page with guess
-        # redirect_to "/spaces/location=#{@location}"
+        redirect_to "/spaces/location=#{@location}"
       end
     end
   end
