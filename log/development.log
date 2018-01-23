@@ -8322,3 +8322,93 @@ Processing by SpacesController#location as HTML
 Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/spaces/new" for 127.0.0.1 at 2018-01-23 11:32:47 -0500
+Processing by SpacesController#new as HTML
+  [1m[36mGrid Load (0.2ms)[0m  [1m[34mSELECT  "grids".* FROM "grids" ORDER BY "grids"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering spaces/new.html.erb within layouts/application
+  Rendered spaces/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-23 11:32:49 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"FpW2ALHGAMZUYUUSQAgN/Cl6uR4C+QpVeKK4VhaucFG+jHx0PtGCBl2T7lOSbfodsKF+v4RmAzvBYL14D1jG8g==", "location"=>"b1"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/spaces/location=b1
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/spaces/location=b1" for 127.0.0.1 at 2018-01-23 11:32:49 -0500
+Processing by SpacesController#location as HTML
+  Parameters: {"location"=>"location=b1"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  Rendering spaces/location.html.erb within layouts/application
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  Rendered spaces/location.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-23 11:35:37 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"DLlB/r+qstQ+Vqcwk8NigNB9gVxR14RAg4FYbhdyGi6koIuKML0wFDekDHFBppVhSaZG/ddIjS46Q11ADoSsjQ==", "location"=>"b1"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/spaces/location=b1
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/spaces/location=b1" for 127.0.0.1 at 2018-01-23 11:35:37 -0500
+Processing by SpacesController#location as HTML
+  Parameters: {"location"=>"location=b1"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  Rendering spaces/location.html.erb within layouts/application
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b1"], ["LIMIT", 1]]
+  Rendered spaces/location.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/spaces" for 127.0.0.1 at 2018-01-23 11:35:39 -0500
+Processing by SpacesController#create as HTML
+  Parameters: {"authenticity_token"=>"oDwbfX25CghwGnaM/wfagChkdU/8tzqhIg2ms6ccj3EIJdEJ8q6IyHno3c0tYi1hsb+y7nooM8+bz6Odvuo50g==", "location"=>"b2"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/spaces/location=b2
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/spaces/location=b2" for 127.0.0.1 at 2018-01-23 11:35:39 -0500
+Processing by SpacesController#location as HTML
+  Parameters: {"location"=>"location=b2"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendering spaces/location.html.erb within layouts/application
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendered spaces/location.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/spaces/location=b2" for 127.0.0.1 at 2018-01-23 11:50:24 -0500
+Processing by SpacesController#location as HTML
+  Parameters: {"location"=>"location=b2"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendering spaces/location.html.erb within layouts/application
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendered spaces/location.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spaces/location=b2" for 127.0.0.1 at 2018-01-23 11:50:41 -0500
+Processing by SpacesController#location as HTML
+  Parameters: {"location"=>"location=b2"}
+  [1m[36mSpace Load (0.1ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendering spaces/location.html.erb within layouts/application
+  [1m[36mCACHE Space Load (0.0ms)[0m  [1m[34mSELECT  "spaces".* FROM "spaces" WHERE "spaces"."location" = ? LIMIT ?[0m  [["location", "b2"], ["LIMIT", 1]]
+  Rendered spaces/location.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
