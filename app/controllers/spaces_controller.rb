@@ -12,18 +12,19 @@ class SpacesController < ApplicationController
     @guessed = @space.guessed
 
     bomb_present = Space.bomb_checker(@location)
-    if bomb_present
-      redirect_to "/spaces/location=#{@location}"
-    else
-      Space.make_guess(@location)
-      if Space.win
-        redirect_to "/spaces/location=#{@location}"
-
-      else
-        # redirect to page with guess
-        # redirect_to "/spaces/location=#{@location}"
-      end
-    end
+    redirect_to "/spaces/location=#{@location}"
+    # if bomb_present
+    #   redirect_to "/spaces/location=#{@location}"
+    # else
+    #   Space.make_guess(@location)
+    #   if Space.win
+    #     redirect_to "/spaces/location=#{@location}"
+    #
+    #   else
+    #     # redirect to page with guess
+    #     # redirect_to "/spaces/location=#{@location}"
+    #   end
+    # end
   end
 
   # def loser
@@ -39,18 +40,18 @@ class SpacesController < ApplicationController
     @guessed = @space.guessed
     # byebug
     bomb_present = Space.bomb_checker(@location)
-    if bomb_present
-      redirect_to "/spaces/location=#{@location}"
-    else
-      Space.make_guess(@location)
-      if Space.win
-        redirect_to "/spaces/location=#{@location}"
-
-      else
-        # redirect to page with guess
-        redirect_to "/spaces/location=#{@location}"
-      end
-    end
+    # if bomb_present
+    #   redirect_to "/spaces/location=#{@location}"
+    # else
+    #   Space.make_guess(@location)
+    #   if Space.win
+    #     redirect_to "/spaces/location=#{@location}"
+    #
+    #   else
+    #     # redirect to page with guess
+    #     redirect_to "/spaces/location=#{@location}"
+    #   end
+    # end
   end
 
   private
