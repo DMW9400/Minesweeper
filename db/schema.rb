@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180122143631) do
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "grid_id"
+    t.string "guesses"
     t.integer "rounds", default: 0
     t.integer "wins", default: 0
     t.integer "losses", default: 0

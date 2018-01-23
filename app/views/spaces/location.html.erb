@@ -1,5 +1,12 @@
+<% if Space.bomb_checker(@location)%>
+  <h1><%= @location %> was a bomb! BOOOOO</h1>
+<% elsif @guessed %>
+  <h1><%= @location %> has been guessed! </h1>
+<% else %>
+  <h1>YOU WIN!</h1>
+<% end %>
+
 <%=  button_to "a1", spaces_path, method: :post, params: { location: "a1" } %>
 <%=  button_to "a2", spaces_path, method: :post, params: { location: "a2" } %>
-<br>
 <%=  button_to "b1", spaces_path, method: :post, params: { location: "b1" } %>
 <%=  button_to "b2", spaces_path, method: :post, params: { location: "b2" } %>
