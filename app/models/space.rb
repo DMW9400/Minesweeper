@@ -14,6 +14,7 @@ class Space < ApplicationRecord
   def self.make_guess(location)
     @user_guess = Space.find_by(location: location)
     @user_guess.update(guessed: true)
+    @add_guess_to_session = Session.create(guess: @user_guess)
   end
 
   def self.win
@@ -25,6 +26,13 @@ class Space < ApplicationRecord
         false
       end
   end
+
+    def self.reset
+      Space.all.each do |space|
+        space.guessed = false
+        space.save
+      end
+    end
 
 
 
